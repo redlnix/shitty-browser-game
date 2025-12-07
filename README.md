@@ -9,3 +9,44 @@ ill fix that tomorrow dec 7
 
 
 yahoo
+
+Flappy Bird clone
+
+Agar.io
+
+Snake.io
+'
+
+(good)
+Top down 2d game
+
+combat top down 2d
+
+fire ball dodger
+
+fnaf (bad)
+
+fishing game
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+(Good game)
+Incremental ////////////////////////////////
+
+
+Minigames???
+
+Fishing /////////////////////////////////////
+
+MineSweeper
+
+Entier hello neighbor series
+
+Typing (Monkey type)
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Incremental Gamewith fishing minigame
