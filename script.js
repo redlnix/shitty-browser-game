@@ -7,5 +7,13 @@ document.getElementById("thomas123").onclick = function() {
 }
 
 setInterval(()=> {
-document.getElementById('goom').style.transform = `rotate(${(Date.now() / 10) % 360}deg)`
+const goom = document.getElementById('goominput').checked
+let speed = ''
+if (goom) {
+speed = 1
+} else {
+speed = 20
+}
+
+document.getElementById('goom').style.transform = `rotate(${(Date.now() / speed) % 360}deg)`
 })
