@@ -3,7 +3,7 @@ let Barheight = 70
 let BarY = 0
 let Mouse = false
 let MomentumY = 0
-let Fishhight = 50
+let Fishheight = 50
 let FishY = 300
 let FishMomentum = 0
 
@@ -36,9 +36,40 @@ UpdateBar()
 
 
 
-Array.from(document.getElementsByClassName('fish')).forEach(fish => {
-if (fish.dataset.timer < 1) {}
+const fish = document.getElementById('fish')
 
-})
+if (Number(fish.dataset.timer) < 1) {
+
+let direction = -1
+if (Math.floor(Math.random() * 2) == 1) {
+direction = 1;
+}
+if (parseInt(fish.style.bottom) < 100) {
+direction = 1;
+} else if (parseInt(fish.style.bottom) > 500) {
+direction = -1;
+}
+
+fish.dataset.momentum = (Math.random() * 4 + 4) * direction
+fish.dataset.timer = Math.random() * 40 + 30
+console.log(fish.dataset.timer)
+console.log(fish.dataset.momentum)
+}
+
+let momentum = Number(fish.dataset.momentum)
+
+fish.dataset.momentum = Number(fish.dataset.momentum) * 0.97
+
+let fishY = parseInt(fish.style.bottom) || 0
+
+let newfishY = Math.min(fishY + momentum, 600 - Fishheight)
+newfishY = Math.max(fishY + momentum, 0)
+
+fish.style.bottom = newfishY + 'px'
+
+console.log(fishY)
+
+fish.dataset.timer--;
+
 
 }, 20)

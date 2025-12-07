@@ -27,9 +27,10 @@ background-color: rgb(144, 255, 70);
 position: absolute;
 bottom: 0px;
 }
-.fish {
+#fish {
 width: 60px;
 position: absolute;
 left: 5px;
 height: 50px;
+bottom: 300px;
 }
