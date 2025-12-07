@@ -37,7 +37,7 @@ UpdateBar()
 
 
 Array.from(document.getElementsByClassName('fish')).forEach(fish => {
-if (fish.dataset.timer) {}
+if (fish.dataset.timer < 1) {}
 
 })
 
