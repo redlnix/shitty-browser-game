@@ -49,4 +49,4 @@ Typing (Monkey type)
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-Incremental Gamewith fishing minigame
+Incremental Game with fishing minigame
