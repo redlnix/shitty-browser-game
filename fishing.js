@@ -62,8 +62,9 @@ fish.dataset.momentum = Number(fish.dataset.momentum) * 0.97
 
 let fishY = parseInt(fish.style.bottom) || 0
 
-let newfishY = Math.min(fishY + momentum, 600 - Fishheight)
+let newfishY = fishY + momentum
 newfishY = Math.max(fishY + momentum, 0)
+newfishY = Math.min(fishY + Fishheight, 600)
 
 fish.style.bottom = newfishY + 'px'
 
