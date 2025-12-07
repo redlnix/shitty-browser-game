@@ -7,5 +7,5 @@ document.getElementById("daniel123").onclick = function() {
 document.getElementById("thomas123")
 
 document.getElementById("thomas123").onclick = function() {
-    
+    document.body.classList.toggle("bomb");
 }
