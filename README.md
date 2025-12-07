@@ -49,3 +49,5 @@ different currencies for one minigame
 Fishing ----- (Stardew valley style)
 
 Mining -----
+
+balls in yo jaws
