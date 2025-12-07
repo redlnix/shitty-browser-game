@@ -7,7 +7,6 @@ let Fishhight = 50
 let FishY = 300
 let FishMomentum = 0
 
-
 function UpdateBar() {
 BarY = Math.min(BarY, 600 - Barheight)
 if (BarY <= 0) MomentumY = 0
@@ -29,13 +28,17 @@ MomentumY += Mouse * 1
 MomentumY *= 0.95
 MomentumY -= 0.5
 
-
-
 MomentumY = Math.min(MomentumY, 8)
 MomentumY = Math.max(MomentumY, -8)
 
-
 BarY += MomentumY
 UpdateBar()
+
+
+
+Array.from(document.getElementsByClassName('fish')).forEach(fish => {
+if (fish.dataset.timer) {}
+
+})
 
 }, 20)
