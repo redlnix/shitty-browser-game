@@ -16,4 +16,4 @@ speed = 20
 }
 
 document.getElementById('goom').style.transform = `rotate(${(Date.now() / speed) % 360}deg)`
-})
+}, 10)
