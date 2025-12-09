@@ -1,13 +1,13 @@
 const bar = document.getElementById('fishing-fill')
-let progress = 0
+let progress = 30
 let Barheight = 70
 let BarY = 0
 let Mouse = false
 let MomentumY = 0
-let Fishheight = 50
 let FishMomentum = 0
 let FishStats = {speedran: 4, speedbase: 4, timeran: 40, timebase: 30}
-
+let IncreaseRate = 0.2
+let DecreaseRate = 0.1
 
 function UpdateBar() {
 BarY = Math.min(BarY, 600 - Barheight)
@@ -26,9 +26,9 @@ Mouse = false
 })
 
 setInterval(()=> {
-MomentumY += Mouse * 1
-MomentumY *= 0.95
-MomentumY -= 0.5
+MomentumY += Mouse * 0.9
+MomentumY *= 0.94
+MomentumY -= 0.4
 
 MomentumY = Math.min(MomentumY, 8)
 MomentumY = Math.max(MomentumY, -8)
@@ -42,11 +42,44 @@ const Fish = document.getElementById('fish')
 
 const FishY = parseInt(Fish.style.bottom)
 
-if (FishY + Fishheight >= BarY && FishY <= BarY + Barheight) {
-console.log('touch')
+if (FishY + 50 >= BarY && FishY <= BarY + Barheight) {
+progress += IncreaseRate;
+document.getElementById('')
+} else {
+progress -= DecreaseRate;
 }
 
+let t;
+let color1;
+let color2
+if (progress <= 33) {
+color1 = { r:255, g:0, b:0 };
+color2 = { r:255, g:165, b:0 };
+t = progress / 33
+} else if (progress <= 66) {
+color1 = { r:255, g:165, b:0 };
+color2 = { r:255, g:255, b:0 };
+t = (progress - 33) / 33
+} else {
+color1 = { r:255, g:255, b:0 };
+color2 = { r:0, g:255, b:0 };
+t = (progress - 66) / 33
+}
+
+const newcolor = GradientSelect(color1, color2, t);
+
+document.getElementById('progress-fill').style.backgroundColor = `rgb(${newcolor.r},${newcolor.g},${newcolor.b})`
+document.getElementById('progress-fill').style.width = `${progress}%`
 }, 20)
+
+
+function GradientSelect(c1, c2, t) {
+return {
+r: c1.r + (c2.r - c1.r) * t,
+g: c1.g + (c2.g - c1.g) * t,
+b: c1.b + (c2.b - c1.b) * t
+};
+}
 
 
 function UpdateFish() {
@@ -78,7 +111,7 @@ let fishY = parseInt(Fish.style.bottom) || 0
 fishY = fishY + momentum
 
 fishY = Math.max(fishY, 0)
-fishY = Math.min(fishY, 600 - Fishheight)
+fishY = Math.min(fishY, 600 - 50)
 
 fish.style.bottom = fishY + 'px'
 
