@@ -12,7 +12,9 @@ let DecreaseRate = 0.1
 let Rod = 1;
 let Fishing = 0;
 let Waiting = 1;
-let FishWait = 60;
+let FishWait = Math.round(Math.random() * 80 + 200);
+let WaitRan = 80;
+let WaitBase = 120;
 let AlertTime = 0;
 
 function UpdateBar() {
@@ -82,21 +84,53 @@ document.getElementById('progress-fill').style.backgroundColor = `rgb(${newcolor
 document.getElementById('progress-fill').style.width = `${progress}%`
 } else if (Waiting) {
 FishWait -= 0.5;
-if (FishWait <= 0) {
 
+if (FishWait <= 0 && AlertTime == 0) {
+document.getElementById('click').style.display = 'block'
+AlertTime = 60;
+
+let W = setInterval(()=> {
+if (Mouse) {
+document.getElementById('click').style.display = 'none'
 
 document.getElementById('fishing-bar').style.display = 'block';
 document.getElementById('progress-bar').style.display = 'block';
 Fishing = true;
 Waiting = false;
-document.getElementById('fish').style.bottom = '250px'
-progress = 30
+document.getElementById('fish').style.bottom = '250px';
+progress = 30;
+
+
+
+clearInterval(W);
+}
+
+AlertTime--;
+if (AlertTime <= 0) {
+FishWait = Math.round(Math.random() * WaitRan + WaitBase)
+AlertTime = 0;
+document.getElementById('click').style.display = 'none'
+clearInterval(W);
+}
+}, 10)
 }
 
 }
 
 }, 20)
 
+function RarityRandom(list) {
+let total = 0;
+
+list.forEach(item => total += item.rarity);
+
+let rand = Math.random() * total;
+
+for (let item of list) {
+    if (rand < item.rarity) return item;
+    rand -= item.rarity;
+}
+}
 
 function GradientSelect(c1, c2, t) {
 return {
@@ -125,7 +159,6 @@ direction = -1;
 Fish.dataset.momentum = (Math.random() * FishStats.speedran + FishStats.speedbase) * direction
 Fish.dataset.timer = Math.random() * FishStats.timeran + FishStats.timebase
 }
-
 
 Fish.dataset.momentum = Number(Fish.dataset.momentum) * 0.97
 
