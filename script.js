@@ -1,3 +1,18 @@
-document.getElementById("pee").onclick = function() {
-    
-}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") {
+        console.log("right")
+    }
+    if (event.key === "ArrowUp") {
+        console.log("Up")
+    }
+    if (event.key === "ArrowDown") {
+        console.log("Down")
+    }
+    if (event.key === "ArrowLeft") {
+        console.log("left")
+    }
+
+
+
+})

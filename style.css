@@ -5,3 +5,13 @@ body {
     background-size: cover;
     filter: blur(10px);
 }
+
+
+#follower {
+    width: 30px;
+    height: 30px;
+    background: cornflowerblue;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+}
