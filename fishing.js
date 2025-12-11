@@ -5,8 +5,9 @@ let BarY = 0
 let Mouse = false
 let MomentumY = 0
 let FishMomentum = 0
-let FishStats = {speedran: 4, speedbase: 4, timeran: 40, timebase: 30}
-let FishList = [{name: 'bass', speedran: 3, speedbase: 2, timeran: 60, timebase: 40, rarity: 5, minrod: 1, maxrod: 1},]
+let FishStats = {name: '', speedran: 4, speedbase: 4, timeran: 40, timebase: 30, price: 10}
+let FishList = [{name: 'Bass', speedran: 3, speedbase: 2, timeran: 60, timebase: 40, rarity: 5, minrod: 1, maxrod: 5, price: 10},
+{name: 'Minnow', speedran: 2, speedbase: 2, timeran: 50, timebase: 35, rarity: 3, minrod: 1, maxrod: 1, price: 7},]
 let IncreaseRate = 0.2
 let DecreaseRate = 0.1
 let Rod = 1;
@@ -91,16 +92,7 @@ AlertTime = 60;
 
 let W = setInterval(()=> {
 if (Mouse) {
-document.getElementById('click').style.display = 'none'
-
-document.getElementById('fishing-bar').style.display = 'block';
-document.getElementById('progress-bar').style.display = 'block';
-Fishing = true;
-Waiting = false;
-document.getElementById('fish').style.bottom = '250px';
-progress = 30;
-
-
+FishBite()
 
 clearInterval(W);
 }
@@ -119,10 +111,34 @@ clearInterval(W);
 
 }, 20)
 
-function RarityRandom(list) {
+function FishBite() {
+
+document.getElementById('click').style.display = 'none'
+
+document.getElementById('fishing-bar').style.display = 'block';
+document.getElementById('progress-bar').style.display = 'block';
+Fishing = true;
+Waiting = false;
+document.getElementById('fish').style.bottom = '250px';
+progress = 30;
+
+let stats = FishRandom(FishList)
+FishStats.name = stats.name;
+FishStats.speedran = stats.speedran;
+FishStats.speedbase = stats.speedbase;
+FishStats.timeran = stats.timeran;
+FishStats.timebase = stats.timebase;
+FishStats.price = stats.price;
+//speedran: 4, speedbase: 4, timeran: 40, timebase: 30, price: 10
+}
+
+function FishRandom(list) {
 let total = 0;
 
-list.forEach(item => total += item.rarity);
+list.forEach(item => {
+if (rod >= item.minrod && rod <= item.maxrod)
+total += item.rarity
+});
 
 let rand = Math.random() * total;
 
