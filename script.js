@@ -1,13 +1,8 @@
-document.addEventListener("mousemove", function(event) {
-    const follower = document.getElementById("follower");
-    follower.style.left = event.clientX + "px";
-    follower.style.left = event.clientY + "px";
-});
 
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "ArrowRight") {
-        console.log("right")
+        console.log("Right")
     }
     if (event.key === "ArrowUp") {
         console.log("Up")
@@ -16,7 +11,7 @@ document.addEventListener("keydown", function(event) {
         console.log("Down")
     }
     if (event.key === "ArrowLeft") {
-        console.log("left")
+        console.log("Left")
     }
 
 
