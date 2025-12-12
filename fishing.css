@@ -27,7 +27,7 @@ background-color: rgb(136, 255, 57);
 position: absolute;
 bottom: 0px;
 }
-#fish {
+#fish, #Animate {
 width: 60px;
 position: absolute;
 left: 5px;

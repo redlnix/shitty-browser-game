@@ -51,6 +51,10 @@ UpdateBar()
 
 UpdateFish()
 
+if (progress >= 100) {
+FishCatch()
+}
+
 const Fish = document.getElementById('fish')
 
 const FishY = parseInt(Fish.style.bottom)
@@ -129,14 +133,42 @@ FishStats.speedbase = stats.speedbase;
 FishStats.timeran = stats.timeran;
 FishStats.timebase = stats.timebase;
 FishStats.price = stats.price;
-//speedran: 4, speedbase: 4, timeran: 40, timebase: 30, price: 10
+
+console.log(FishStats.name)
 }
+
+function FishCatch() {
+Fishing = false;
+document.getElementById('fishing-bar').style.display = 'none';
+document.getElementById('progress-bar').style.display = 'none';
+
+}
+
+let animateX = 0
+let animateY = 0
+let momentumY = 50;
+let gravity = 3.5;
+setInterval(()=>{
+const animate = document.getElementById('Animate')
+
+animateX += 7;
+animateY += momentumY;
+animateY -= gravity;
+momentumY *= 0.94;
+gravity *= 1.02;
+
+
+
+animate.style.bottom = animateY + 'px'
+animate.style.left = animateX + 'px'
+
+},30)
 
 function FishRandom(list) {
 let total = 0;
 
 list.forEach(item => {
-if (rod >= item.minrod && rod <= item.maxrod)
+if (Rod >= item.minrod && Rod <= item.maxrod)
 total += item.rarity
 });
 
