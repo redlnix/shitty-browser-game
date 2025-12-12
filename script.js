@@ -3,7 +3,9 @@ let ranum = Math.floor(Math.random() * 4) + 1;
 
 document .addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
+    //let is used to declare a variable, to change do : ranum = Math.floor(Math.random() * 4) + 1
         let ranum = Math.floor(Math.random() * 4) + 1;
+    //
         console.log("num is ", ranum)
     }
 })

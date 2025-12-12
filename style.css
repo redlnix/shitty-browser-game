@@ -1,5 +1,28 @@
+/*I like the notes in your code, also you have nestled the other divs in the body.
+eg:
+body {
+
+#hello {
+background-color: blue;
+}
+
+}
+This isnt required and may break more advanced css, for the most when declaring css tags you dont need to nestle or put tags in other tags
+eg:
+#container {
+background-color: red;
+
+#child {
+background-color: red;
+}
+
+}
+Not needed
+*/
+
 body {
     background-color: aliceblue;
+    
    /* #frame {
 
     }
