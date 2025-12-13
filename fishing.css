@@ -65,3 +65,9 @@ position: absolute;
 left: 50px;
 bottom: 0px;
 }
+#Char {
+position: absolute;
+display: none;
+width: 150px;
+height: 150px;
+}

@@ -142,6 +142,8 @@ Fishing = false;
 document.getElementById('fishing-bar').style.display = 'none';
 document.getElementById('progress-bar').style.display = 'none';
 
+
+
 const animate = document.createElement('img');
 animate.src = 'Fish2.jpg';
 animate.className = 'Animate';
@@ -161,13 +163,28 @@ gravity *= 1.04;
 animate.style.bottom = animateY + 'px'
 animate.style.left = animateX + 'px'
 
-if (animateY <= 0) {
+if (animateY <= 10) {
 clearInterval(A)
+
 }
 },30)
+ShowChar(500, 0)
+
 }
 
 
+function ShowChar(x, y) {
+const char = document.getElementById('Char')
+char.style.display = 'block'
+char.style.left = x + 'px'
+char.style.bottom = y + 'px'
+
+}
+
+function HideChar() {
+const char = document.getElementById('Char')
+char.style.display = 'none'
+}
 
 function FishRandom(list) {
 let total = 0;
