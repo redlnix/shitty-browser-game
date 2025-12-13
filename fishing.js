@@ -1,4 +1,4 @@
-const bar = document.getElementById('fishing-fill')
+const bar = document.getElementById('fishing-bar')
 let progress = 30
 let Barheight = 70
 let BarY = 0
@@ -33,9 +33,10 @@ document.addEventListener('mouseup',()=> {
 Mouse = false;
 })
 
+/*
 document.getElementById('fishing-bar').style.display = 'none'
 document.getElementById('progress-bar').style.display = 'none'
-
+*/
 setInterval(()=> {
 if (Fishing) {
 MomentumY += Mouse * 0.9
@@ -119,7 +120,7 @@ function FishBite() {
 
 document.getElementById('click').style.display = 'none'
 
-document.getElementById('fishing-bar').style.display = 'block';
+document.getElementById('fishing-back').style.display = 'block';
 document.getElementById('progress-bar').style.display = 'block';
 Fishing = true;
 Waiting = false;
@@ -139,7 +140,7 @@ console.log(FishStats.name)
 
 function FishCatch() {
 Fishing = false;
-document.getElementById('fishing-bar').style.display = 'none';
+document.getElementById('fishing-back').style.display = 'none';
 document.getElementById('progress-bar').style.display = 'none';
 
 
@@ -151,10 +152,10 @@ document.getElementById('container').appendChild(animate);
 let animateX = 0;
 let animateY = 0;
 let momentumY = 30;
-let gravity = 2.9;
+let gravity = 2.5;
 let A = setInterval(()=>{
 
-animateX += 7;
+animateX += 9;
 animateY += momentumY;
 animateY -= gravity;
 momentumY *= 0.95;
