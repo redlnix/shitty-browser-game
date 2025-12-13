@@ -1,15 +1,14 @@
 //random number generator
-let ranum = Math.floor(Math.random() * 4) + 1;
+let ranum = 0;
 
 document .addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-    //let is used to declare a variable, to change do : ranum = Math.floor(Math.random() * 4) + 1
-        let ranum = Math.floor(Math.random() * 4) + 1;
+       ranum = Math.floor(Math.random() * 4) + 1;
     //
         console.log("num is ", ranum)
     }
 })
-
+//
 
 //hiding the skill checks or whatever
 document .addEventListener("keydown", function(event) {
@@ -18,17 +17,18 @@ document .addEventListener("keydown", function(event) {
      document.getElementById("right").style.display = "none";
       document.getElementById("up").style.display = "none";
        document.getElementById("down").style.display = "none";    
-        console.log(ranum)
-    }   
+    ///////////////////////////////////////////////////////
+    setTimeout(() => {
     if (ranum === 1) {
-        console.log("left")
+        console.log("ranum is left")
+        document.getElementById("left").style.display = "block";
     }
-}    
- ) 
-//
-
-
-
+    else if (ranum === 2) {
+        console.log("ranum is right")
+        document.getElementById("right").style.display = "block";
+    }    
+    }, 2000);
+}})     
 // debugging things
     document.addEventListener("keydown", function(event) {
     if (event.key === "ArrowRight") {
