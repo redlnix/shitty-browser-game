@@ -33,10 +33,10 @@ document.addEventListener('mouseup',()=> {
 Mouse = false;
 })
 
-/*
+
 document.getElementById('fishing-bar').style.display = 'none'
 document.getElementById('progress-bar').style.display = 'none'
-*/
+
 setInterval(()=> {
 if (Fishing) {
 MomentumY += Mouse * 0.9
