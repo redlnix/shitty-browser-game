@@ -14,6 +14,17 @@ margin-top: 50px;
 position: relative;
 border: 20px outset rgb(72, 115, 255);
 }
+#menu {
+display: none;
+width: 600px;
+height: 500px;
+background-color: rgb(211, 211, 211);
+left: calc(50% - 315px);
+top: 50px;
+position: absolute;
+border: 15px inset rgb(138, 138, 138);
+z-index: 99;
+}
 #fishing-back {
 position: absolute;
 width: 70px;

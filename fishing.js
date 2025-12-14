@@ -13,6 +13,7 @@ let DecreaseRate = 0.1
 let Rod = 1;
 let Fishing = 0;
 let Waiting = 1;
+let Pause = 0;
 let FishWait = Math.round(Math.random() * 80 + 200);
 let WaitRan = 80;
 let WaitBase = 120;
@@ -34,10 +35,11 @@ Mouse = false;
 })
 
 
-document.getElementById('fishing-bar').style.display = 'none'
+document.getElementById('fishing-back').style.display = 'none'
 document.getElementById('progress-bar').style.display = 'none'
 
 setInterval(()=> {
+///////////////////////////////////////////////////////////////////////
 if (Fishing) {
 MomentumY += Mouse * 0.9
 MomentumY *= 0.94
@@ -88,6 +90,8 @@ const newcolor = GradientSelect(color1, color2, t);
 
 document.getElementById('progress-fill').style.backgroundColor = `rgb(${newcolor.r},${newcolor.g},${newcolor.b})`
 document.getElementById('progress-fill').style.width = `${progress}%`
+
+///////////////////////////////////////////////////////////////////////
 } else if (Waiting) {
 FishWait -= 0.5;
 
@@ -111,6 +115,8 @@ clearInterval(W);
 }
 }, 10)
 }
+///////////////////////////////////////////////////////////////////////
+} else if (Pause) {
 
 }
 
@@ -140,6 +146,7 @@ console.log(FishStats.name)
 
 function FishCatch() {
 Fishing = false;
+Pause = true;
 document.getElementById('fishing-back').style.display = 'none';
 document.getElementById('progress-bar').style.display = 'none';
 
@@ -166,6 +173,11 @@ animate.style.left = animateX + 'px'
 
 if (animateY <= 10) {
 clearInterval(A)
+setTimeout(()=> {
+document.getElementById('menu').style.display = 'block'
+animate.remove()
+HideChar()
+}, 1000)
 
 }
 },30)
