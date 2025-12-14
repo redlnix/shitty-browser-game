@@ -10,25 +10,58 @@ document .addEventListener("keydown", function(event) {
 })
 //
 
-//hiding the skill checks or whatever
+
+// DEBUG STUFF
+
+//hiding the skill checks or whatever {
 document .addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
     document.getElementById("left").style.display = "none";
      document.getElementById("right").style.display = "none";
       document.getElementById("up").style.display = "none";
        document.getElementById("down").style.display = "none";    
-    ///////////////////////////////////////////////////////
-    setTimeout(() => {
-    if (ranum === 1) {
-        console.log("ranum is left")
-        document.getElementById("left").style.display = "block";
+
+const event = new CustomEvent("hide", {
+    detail: {
+        direction: "hidden",
+        time: Date.now()
+        
     }
-    else if (ranum === 2) {
-        console.log("ranum is right")
-        document.getElementById("right").style.display = "block";
-    }    
-    }, 2000);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+       ///////////////////////////////////////////////////////
+//    if (ranum === 1) {
+//        console.log("ranum is left")
+//        document.getElementById("left").style.display = "block";
+//    }
+//    else if (ranum === 2) {
+//        console.log("ranum is right")
+//        document.getElementById("right").style.display = "block";
+//    }
+//   else if (ranum === 3) {
+//        console.log("ranum is up")
+//
+//    }    
 }})     
+
+
+
+
+
+
+
 // debugging things
     document.addEventListener("keydown", function(event) {
     if (event.key === "ArrowRight") {
