@@ -1,5 +1,15 @@
-//random number generator
+const hide = new CustomEvent("hide", {
+    detail: {
+        direction: "hidden",
+        time: Date.now()
+}})
+let hideTrigger = true;
 let ranum = 0;
+let state = "active"
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 document .addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
@@ -9,57 +19,10 @@ document .addEventListener("keydown", function(event) {
     }
 })
 //
-
-
-// DEBUG STUFF
-
 //hiding the skill checks or whatever {
-document .addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-    document.getElementById("left").style.display = "none";
-     document.getElementById("right").style.display = "none";
-      document.getElementById("up").style.display = "none";
-       document.getElementById("down").style.display = "none";    
+document.addEventListener("keydown", (event) => 
 
-const event = new CustomEvent("hide", {
-    detail: {
-        direction: "hidden",
-        time: Date.now()
-        
-    }
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-       ///////////////////////////////////////////////////////
-//    if (ranum === 1) {
-//        console.log("ranum is left")
-//        document.getElementById("left").style.display = "block";
-//    }
-//    else if (ranum === 2) {
-//        console.log("ranum is right")
-//        document.getElementById("right").style.display = "block";
-//    }
-//   else if (ranum === 3) {
-//        console.log("ranum is up")
-//
-//    }    
-}})     
-
-
-
-
-
+)
 
 
 // debugging things
