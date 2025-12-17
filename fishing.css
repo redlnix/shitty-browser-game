@@ -1,0 +1,92 @@
+body {
+font-family: "Roboto", sans-serif;
+background-color: rgb(93, 136, 255);
+
+background-size: 600px;
+}
+#container {
+width: 800px;
+height: 700px;
+background-color: rgb(171, 231, 255);
+
+margin: 0 auto;
+margin-top: 50px;
+position: relative;
+border: 20px outset rgb(72, 115, 255);
+}
+#menu {
+display: none;
+width: 600px;
+height: 500px;
+background-color: rgb(211, 211, 211);
+left: calc(50% - 315px);
+top: 50px;
+position: absolute;
+border: 15px inset rgb(138, 138, 138);
+z-index: 99;
+}
+#fishing-back {
+position: absolute;
+width: 70px;
+border: 7px solid rgb(107, 102, 82);
+border-radius: 7px;
+height: 600px;
+background-color: rgb(255, 220, 155);
+background: linear-gradient(180deg,rgba(255, 220, 155, 1) 0%, rgba(255, 211, 77, 1) 100%);
+margin-left: 30px;
+top: 30px;
+padding: 0px;
+}
+#fishing-bar {
+width: 62px;
+height: 70px;
+background-color: rgb(142, 253, 68);
+border: 4px solid rgb(82, 223, 82);
+border-radius: 5px;
+position: absolute;
+bottom: 0px;
+}
+#fish {
+width: 55px;
+position: absolute;
+left: 7.5px;
+height: 50px;
+bottom: 300px;
+}
+.Animate {
+width: 60px;
+position: absolute;
+height: 50px;
+}
+#progress-bar {
+position: absolute;
+width: 350px;
+height: 30px;
+bottom: 20px;
+left: 200px;
+background-color: rgb(119, 119, 119);
+padding: 10px;
+border-radius: 7px;
+}
+
+#progress-fill {
+width: 100%;
+height: 100%;
+background-color: rgb(255, 58, 58);
+}
+img {
+pointer-events: none;
+user-select: none;
+}
+#click {
+display: none;
+position: absolute;
+left: 50px;
+bottom: 0px;
+}
+#Char {
+position: absolute;
+display: none;
+width: 150px;
+height: 150px;
+}
