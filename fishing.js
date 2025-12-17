@@ -19,6 +19,13 @@ let WaitRan = 80;
 let WaitBase = 120;
 let AlertTime = 0;
 
+const currencysend = new CustomEvent("send currency to shop", {
+  detail: {
+    direction: "left",
+    time: Date.now()
+  }
+});
+
 function UpdateBar() {
 BarY = Math.min(BarY, 600 - Barheight)
 if (BarY <= 0) MomentumY = Math.abs(MomentumY * 0.8)
@@ -149,6 +156,7 @@ Fishing = false;
 Pause = true;
 document.getElementById('fishing-back').style.display = 'none';
 document.getElementById('progress-bar').style.display = 'none';
+document.dispatchEvent(currencysend);
 
 
 
