@@ -71,7 +71,7 @@ const FishY = parseInt(Fish.style.bottom)
 
 if (FishY + 50 >= BarY && FishY <= BarY + Barheight) {
 progress += IncreaseRate;
-document.getElementById('')
+
 } else {
 progress -= DecreaseRate;
 }
@@ -161,7 +161,7 @@ document.dispatchEvent(currencysend);
 
 
 const animate = document.createElement('img');
-animate.src = 'Fish2.jpg';
+animate.src = '/shitty-browser-game/images/fishing/Fish2.jpg';
 animate.className = 'Animate';
 document.getElementById('container').appendChild(animate);
 let animateX = 0;
