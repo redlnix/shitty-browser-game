@@ -1,0 +1,3 @@
+so we have mining, fishing, and foraging for the minigames so far, and we haved worked on some of those, fishing is done, foraging is half finished, and mining is barley done.
+
+We haven't worked on stats or the shop yet, but we did merge everything into one branch
